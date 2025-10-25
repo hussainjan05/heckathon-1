@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hussain Store E-Commerce </title>
+
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Loader -->
+<div id="loader">
+  <div class="spinner"></div>
+  <p>Loading...</p>
+</div>
+
+  <!-- Navbar (fixed) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+
+        <h3>Hussain Store</h3>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html">Cart <span id="navCartCount" class="badge bg-warning text-dark ms-1">0</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section>
+
+    
+  <!-- hero section start -->
+
+  <div class="hero-main">
+
+    <div class="hero-part1">
+        <h1> A GREAT NEW COLLECTION </h1>
+        <P> up to 70% off  selected products</P>
+
+        <button onclick="window.scrollTo(0,800)">Shop Now</button>
+        
+    </div>
+
+    <div class="hero-part2">
+
+        <img id="heroImg" src="" alt="">
+
+    </div>
+  </div>
+  </section>
+
+  <!-- Features / Highlights Section -->
+<section class="features-section">
+  <div class="features-container">
+    <div class="feature-box">
+      <i class="fa-solid fa-truck-fast"></i>
+      <h3>Free Shipping</h3>
+      <p>Enjoy free shipping on all orders over $50 — delivered fast and safely.</p>
+    </div>
+
+    <div class="feature-box">
+      <i class="fa-solid fa-headset"></i>
+      <h3>24/7 Support</h3>
+      <p>Our support team is always ready to help you anytime, anywhere.</p>
+    </div>
+
+    <div class="feature-box">
+      <i class="fa-solid fa-shield-halved"></i>
+      <h3>Secure Payment</h3>
+      <p>Shop confidently — all transactions are encrypted and protected.</p>
+    </div>
+
+    <div class="feature-box">
+      <i class="fa-solid fa-rotate"></i>
+      <h3>Easy Returns</h3>
+      <p>Not satisfied? Enjoy a 7-day hassle-free return policy for every product.</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+  <!-- Main -->
+  <main class="container mt-5 pt-5">
+    <div class="row mb-3 align-items-center">
+      <div class="col-md-6">
+        <h2 class="mb-0">Products</h2>
+        <small class="text-muted">From fakestoreapi.com</small>
+      </div>
+
+      <div class="col-md-6">
+        <div class="d-flex justify-content-md-end align-items-center gap-3">
+          <div class="d-flex align-items-center">
+            <label for="priceRange" class="me-2 mb-0">Max Price:</label>
+            <input type="range" id="priceRange" min="0" max="1000" value="1000" class="form-range">
+            <span id="priceRangeValue" class="ms-2 fw-bold">All</span>
+          </div>
+          <button id="clearFilter" class="btn btn-outline-secondary btn-sm">Clear</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spinner -->
+    <div id="loading" class="text-center my-5">
+      <div class="spinner-border" role="status"></div>
+      <p class="mt-2">Loading products...</p>
+    </div>
+
+    <!-- Products grid -->
+    <div id="productsRow" class="row g-3"></div>
+  </main>
+
+  <!-- Product Details Modal -->
+  <div class="modal fade" id="productModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 id="modalTitle" class="modal-title"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body d-flex gap-4">
+          <img id="modalImage" src="" alt="" style="width:220px; height:auto; object-fit:contain;">
+          <div>
+            <p id="modalDescription"></p>
+            <p class="fw-bold">Category: <span id="modalCategory"></span></p>
+            <p class="h5">Price: $ <span id="modalPrice"></span></p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="modalAddToCart" class="btn btn-primary">Add to Cart</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Promo / CTA Section -->
+<section class="promo-section">
+  <div class="promo-content">
+    <h2>Upgrade Your Style Today</h2>
+    <p>Shop our exclusive collection and get <span>30% OFF</span> your first order!  
+       Limited time offer — don't miss out.</p>
+    <a href="#" class="promo-btn">Shop Now</a>
+  </div>
+</section>
+
+
+  <footer class="footer">
+  <div class="footer-container">
+    <!-- Brand Section -->
+    <div class="footer-col">
+      <h2 class="footer-logo">Hussain store</h2>
+      <p>Discover the best fashion and accessories at amazing prices. Style meets comfort.</p>
+      <div class="social-links">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <!-- Shop Links -->
+    <div class="footer-col">
+      <h3>Shop</h3>
+      <ul>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Kids</a></li>
+        <li><a href="#">New Arrivals</a></li>
+      </ul>
+    </div>
+
+    <!-- Customer Service -->
+    <div class="footer-col">
+      <h3>Customer Service</h3>
+      <ul>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Shipping</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="footer-col">
+      <h3>Newsletter</h3>
+      <p>Subscribe to get special offers and updates.</p>
+      <form class="newsletter">
+        <input type="email" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Destry Store. All Rights Reserved.</p>
+  </div>
+</footer>
+
+  
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- App JS -->
+  <script src="./main.js"></script>
+</body>
+</html>
