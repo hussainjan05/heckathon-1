@@ -144,15 +144,33 @@ clearFilter.addEventListener('click', ()=>{
 
 
 
- const heroImg = document.getElementById("heroImg");
+const heroImg = document.getElementById("heroImg");
 
-  fetch("https://fakestoreapi.com/products/3")
+let productId = 1; // start from product 1
+const totalProducts = 20; // fakestoreapi has 20 products
+
+function loadImage() {
+  fetch(`https://fakestoreapi.com/products/${productId}`)
     .then((res) => res.json())
     .then((data) => {
-      const heroImg = document.getElementById("heroImg");
-      heroImg.src = data.image; 
+      heroImg.classList.add("fade-out"); // fade animation
+      setTimeout(() => {
+        heroImg.src = data.image;
+        heroImg.classList.remove("fade-out");
+      }, 500);
     })
-    .catch((error) => console.log("Error:", error));
+    .catch((err) => console.log("Error loading image:", err));
+
+  productId++;
+  if (productId > totalProducts) productId = 1; // loop back
+}
+
+// First load
+loadImage();
+
+// Change every 3 seconds
+setInterval(loadImage, 3000);
+
 
 
   
