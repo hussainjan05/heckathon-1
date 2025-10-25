@@ -54,8 +54,8 @@ function renderProducts(list) {
           <h6 class="card-title mb-1" title="${escapeHtml(p.title)}">${truncate(p.title,60)}</h6>
           <p class="mb-2 text-success fw-bold">$${p.price.toFixed(2)}</p>
           <div class="mt-auto d-flex gap-2">
-            <button class="btn btn-sm btn-outline-primary w-100 view-btn" data-id="${p.id}">View</button>
-            <button class="btn btn-sm btn-primary add-btn" data-id="${p.id}">Add to Cart</button>
+            <button id="modalViewProduct" class="btn btn-sm btn-outline-primary w-100 view-btn" data-id="${p.id}">View</button>
+            <button id="modalAddToCart" class="btn btn-sm btn-primary add-btn" data-id="${p.id}">Add to Cart</button>
           </div>
         </div>
       </div>

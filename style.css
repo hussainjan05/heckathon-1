@@ -34,16 +34,27 @@ body {
   }
 }
 
+#modalAddToCart{
+  background-color: #e63b3b;
+  border: none;
+}
+
+#modalViewProduct{
+  color: red;
+  font-size: bold;
+  border: 2px solid red;
+}
 /* hero section */
 .hero-main {
   margin-top: 100px;
   display: flex;
   justify-content: center;
-  background: rgb(168, 166, 162);
+    background: linear-gradient(135deg, black, #e1d4d1);
+  
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  color: white;
+  color:white;
 }
 
 .hero-part1 {
@@ -67,7 +78,8 @@ body {
 }
 
 .hero-part1 h1 {
-  font-size: 40px;
+  font-size: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .hero-part1 button {
@@ -281,7 +293,7 @@ img {
 
 /* ===== Promo Section ===== */
 .promo-section {
-  background: linear-gradient(135deg, #ff4d4d, #ff7a59);
+  background: linear-gradient(135deg, black, #e1d4d1);
   color: #fff;
   text-align: center;
   padding: 80px 20px;
