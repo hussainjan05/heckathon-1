@@ -43,7 +43,13 @@ body {
   color: red;
   font-size: bold;
   border: 2px solid red;
+  
 }
+#modalViewProduct:hover{
+  background-color: #e63b3b;
+  color: white;
+}
+
 /* hero section */
 .hero-main {
   margin-top: 100px;
